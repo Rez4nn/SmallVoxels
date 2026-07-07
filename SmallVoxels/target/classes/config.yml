@@ -1,0 +1,67 @@
+# Limits are tuned for smaller servers, around 2GB RAM by default.
+# Raise these if your server has more headroom.
+limits:
+  brush-radius: 4
+  tool-height: 16
+  set-voxels: 768
+  remove-voxels: 768
+  preview-voxels: 1024
+
+# Sends a short install hint to players with SmallVoxels permissions when they join.
+startup-message: true
+
+# Optional lag helper. Leave off unless you are hunting heavy voxel areas.
+heavy-voxel-tracking:
+  enabled: false
+  chunk-threshold: 400
+  block-threshold: 80
+
+# Default settings. Add a world under worlds_name only when it needs an override.
+# protected-voxels: if true, voxel blocks are owner/trust protected.
+# per-player-schematics: if true, schematic saves/loads are separated by player inside that world.
+# survival.mining-individual: if true, voxel blocks can be mined without the axe and drop individual voxel items.
+defaults:
+  protected-voxels: false
+  per-player-schematics: false
+  survival:
+    mining-individual: false
+    crafting-table:
+      enabled: false
+      # For custom GUI usage in Nexo. If enabled, matching GUI titles can craft voxel bits too.
+      component:
+        enabled: false
+        name: "smallvoxels_crafting"
+    stonecutter:
+      enabled: false
+      # For custom GUI usage in Nexo. If enabled, matching GUI titles can split voxel bits too.
+      component:
+        enabled: false
+        name: "smallvoxels_stonecutter"
+
+# Optional per-world overrides. Uncomment and rename the world when needed.
+# worlds_name:
+#   world:
+#     protected-voxels: false
+#     per-player-schematics: false
+#     survival:
+#       mining-individual: false
+#       crafting-table:
+#         enabled: false
+#       stonecutter:
+#         enabled: false
+# Number of saved voxel blocks restored per tick after startup or chunk loading.
+loading:
+  blocks-per-tick: 8
+
+# Display entities are sent to clients within roughly 64 times this value.
+rendering:
+  view-range: 1.0
+  # Skips fully enclosed opaque voxel pieces. Newly exposed pieces reappear after edits.
+  cull-hidden-voxels: true
+
+# Warns console and online operators when measured SmallVoxels work exceeds a server tick budget.
+lag-tracking:
+  enabled: true
+  warn-ops: true
+  operation-warning-ms: 25.0
+  cooldown-seconds: 60

@@ -1,0 +1,87 @@
+name: SmallVoxels
+main: me.reube.SmallVoxels.SmallVoxels
+version: 1.0-SNAPSHOT
+description: A detailed building plugin that allows players to carve blocks into voxel grids
+authors: [Rezann_]
+api-version: 1.21
+softdepend: [WorldGuard]
+
+commands:
+  getvoxel:
+    description: Get the Voxel Axe tool, or /getvoxel animation for the Animation Axe
+    usage: /getvoxel [animation]
+    permission: smallvoxels.voxel.get
+  smallvoxels:
+    description: SmallVoxels clipboard, schematic, and trust tools
+    usage: /smallvoxels <refresh|delete|save|load|list|rotate|flip|animation|playertrust|playertrustregion|playerremove|player>
+    aliases: [sv, vox]
+
+permissions:
+  smallvoxels.voxel.get:
+    description: Allows player to get the Voxel Axe
+    default: op
+  smallvoxels.voxel.use:
+    description: Allows player to use the Voxel Axe
+    default: true
+  smallvoxels.chisel.get:
+    description: Legacy permission for getting the Voxel Axe
+    default: false
+  smallvoxels.chisel.use:
+    description: Legacy permission for using the Voxel Axe
+    default: false
+  smallvoxels.schematic.use:
+    description: Allows player to save, load, rotate, and flip voxel schematics
+    default: op
+  smallvoxels.animation.use:
+    description: Allows player to create and run generic animated voxel objects
+    default: op
+  smallvoxels.animation.get:
+    description: Allows player to get the Animation Axe
+    default: op
+  smallvoxels.animation.manage:
+    description: Allows player to create, select, list, show, hide, play, stop, and inspect animations
+    default: op
+  smallvoxels.animation.settings:
+    description: Allows player to use animation editor, state, and keyframe GUIs
+    default: op
+  smallvoxels.animation.wind:
+    description: Allows player to create and edit wind animations
+    default: op
+  smallvoxels.animation.trigger:
+    description: Allows player to configure animation triggers
+    default: op
+  smallvoxels.animation.delete:
+    description: Allows player to delete animation objects
+    default: op
+  smallvoxels.animation.schematic:
+    description: Allows player to copy, save, and load animation schematics
+    default: op
+  smallvoxels.command-bind:
+    description: Allows player to bind commands to voxel block and bit clicks
+    default: op
+  smallvoxels.trust.use:
+    description: Allows player to trust other players for protected voxels
+    default: true
+  smallvoxels.protection.bypass:
+    description: Allows player to edit protected voxels without trust
+    default: op
+  smallvoxels.admin:
+    description: Allows access to all SmallVoxels tools
+    default: op
+    children:
+      smallvoxels.voxel.get: true
+      smallvoxels.voxel.use: true
+      smallvoxels.chisel.get: true
+      smallvoxels.chisel.use: true
+      smallvoxels.schematic.use: true
+      smallvoxels.animation.use: true
+      smallvoxels.animation.get: true
+      smallvoxels.animation.manage: true
+      smallvoxels.animation.settings: true
+      smallvoxels.animation.wind: true
+      smallvoxels.animation.trigger: true
+      smallvoxels.animation.delete: true
+      smallvoxels.animation.schematic: true
+      smallvoxels.command-bind: true
+      smallvoxels.trust.use: true
+      smallvoxels.protection.bypass: true
